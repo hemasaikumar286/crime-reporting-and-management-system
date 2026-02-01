@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - CRMS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    Crime Reporting & Management System
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Report Crime</a>
+    <a href="status.html">Check Status</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Contact Us</h2>
+
+        <form onsubmit="return submitContactForm()">
+            <input type="text" id="cname" placeholder="Your Name" required>
+            <input type="email" id="cemail" placeholder="Your Email" required>
+            <input type="text" id="csubject" placeholder="Subject" required>
+            <textarea id="cmessage" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>Office Information</h3>
+        <p><strong>Email:</strong> support@crms.com</p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Address:</strong> Central Police Office, City Center</p>
+    </div>
+</div>
+
+<footer>
+    © 2026 CRMS Project | All Rights Reserved
+</footer>
+
+<script>
+function submitContactForm() {
+    const name = document.getElementById("cname").value.trim();
+    const email = document.getElementById("cemail").value.trim();
+    const message = document.getElementById("cmessage").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        showAlert("Please fill all fields", "error");
+        return false;
+    }
+
+    showAlert("Message Sent Successfully!");
+    return false; // demo only
+}
+</script>
+
+</body>
+</html>
